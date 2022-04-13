@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="icon" href="data:,">
+
+<!-- jquery -->
+  <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>  
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+
+
+  <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}">
+
+
+
+    <title>Baby Barista</title>
+  </head>
+  <body>
+    
+
+    
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand" href="/">Baby Barista</a>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <form id="target_coffee" action="/view/1">
+          <input type="submit" id="coffee" value="Coffee">
+        </form>
+        <form id="target_tea" action="/view/2">
+          <input type="submit" id="tea" value="Tea">
+        </form>
+        <form id="target_other" action="/view/3">
+          <input type="submit" id="other" value="Other">
+        </form> 
+      </div>
+    </div>
+  </div>
+</nav>
+    <div class="container">   
+        {% block content %}
+          <div id="welcome"> Welcome to Baby Barista! </div>
+          <div id="welcome-explanation"> Please navigate to your beverage category of choice to kickstart your drink making skills! </div>
+        {% endblock %}
+    </div>
+  </body>
+</html>
+
+
+
+
