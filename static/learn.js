@@ -26,7 +26,7 @@ $(document).ready(function(){
 	//}
 	else{
 		$("#learn_next_step_button").html("Go To Quiz")
-		window.location.href = "http://localhost:5000/quiz/"+drink_info.id;
+		window.location.href = "/quiz/"+drink_info.id;
 
 	}
 
