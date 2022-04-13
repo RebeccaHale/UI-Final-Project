@@ -10,7 +10,7 @@ drink_data = {
         "type": "Coffee",
         "ingredients": ["Coffee Powder", "White Sugar", "Milk", "Water"],
         "tools": ["Microwave", "Whisk"],
-        "directions": ["White Sugar", "Coffee Powder", "Water", "Whisk", "Milk", "Whisk", "Microwave"],
+        "directions": ["Add White Sugar", "Add Coffee Powder", "Add Water", "Whisk Ingredients", "Add Milk", "Whisk Ingredients", "Microwave Ingredients"],
         "number_steps": "7",
         "image": "https://media.istockphoto.com/photos/cappuccino-picture-id173245886?s=612x612"
     },
@@ -20,7 +20,7 @@ drink_data = {
         "type": "Tea",
         "ingredients": ["Matcha Powder", "Milk", "Water", "Honey"],
         "tools": ["Microwave", "Whisk"],
-        "directions": ["Water", "Microwave", "Matcha Powder", "Whisk", "Milk", "Honey", "Whisk", "Microwave"],
+        "directions": ["Add Water", "Microwave Ingredients", "Add Matcha Powder", "Whisk Ingredients", "Add Milk", "Add Honey", "Whisk Ingredients", "Microwave Ingredients"],
         "number_steps": "8",
         "image": "https://media.istockphoto.com/photos/matcha-latte-green-milk-foam-cup-on-wood-table-at-cafe-trendy-powered-picture-id1325991061?s=612x612"
     },
@@ -30,7 +30,7 @@ drink_data = {
         "type": "Other",
         "ingredients": ["Cocoa Powder", "White Sugar", "Milk", "Vanilla Extract", "Mini Marshmallows"],
         "tools": ["Microwave", "Whisk"],
-        "directions": ["Milk", "Microwave", "Cocoa Powder", "White Sugar", "Whisk", "Mini Marshmallows", "Microwave"],
+        "directions": ["Add Milk", "Microwave Ingredients", "Add Cocoa Powder", "Add White Sugar", "Whisk Ingredients", "Add Mini Marshmallows", "Microwave Ingredients"],
         "number_steps": "7",
         "image": "https://media.istockphoto.com/photos/homemade-warm-hot-chocolate-picture-id1320380734?s=612x612"
     }
