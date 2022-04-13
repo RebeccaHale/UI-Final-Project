@@ -6,6 +6,7 @@
     <script>
         let drink_info = {{drink_info|tojson}}
         let ingredient_tool_data = {{ingredient_tool_data|tojson}}
+	
     </script>
     <div class="row">
         <div class="col-12">
@@ -29,10 +30,19 @@
                 {% for tool in  drink_info.tools %}
                     {{tool}}<br>
                 {% endfor %}
-                </div>
             </div>
         </div>
     </div>
-    
+    <div class="row">
+
+       <div class="col-6" id="step_instructions">
+		
+       </div>	
+       <div class="col-6">
+		<button id="learn_next_step_button">
+			Next Step 
+		</button>
+       </div>
+    </div>
 
 {% endblock %}
