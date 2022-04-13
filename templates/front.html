@@ -7,6 +7,36 @@
         let drink_info = {{drink_info|tojson}}
         let ingredient_tool_data = {{ingredient_tool_data|tojson}}
     </script>
-    <div id="update"></div>
+    <div class="row">
+        <div class="col-12">
+            <div id="drink_name"> {{drink_info.name}}: </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            Tools:
+            <div id="tools-shelf">
+                {% for tool in  drink_info.tools %}
+                    {{tool}}<br>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            Ingredients:
+            <div id="ingredients-shelf">
+                {% for ingred in  drink_info.ingredients %}
+                    {{ingred}}<br>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-12">
+            <input type="button" class="make" value="Click to begin!"></input>
+        </div>
+    </div>
 
 {% endblock %}
