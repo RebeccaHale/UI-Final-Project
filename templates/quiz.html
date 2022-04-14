@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block content %}
-    <script type="text/javascript" src="{{ url_for('static', filename = 'view.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename = 'quiz.js') }}"></script>
     
     <script>
         let drink_info = {{drink_info|tojson}}
@@ -12,25 +12,32 @@
             <div id="heading"> Quiz: How to make a {{drink_info.name}} </div>
         </div>
     </div>
+    
     <div class="row">
-        <div class="col-12">
-            Ingredients:
+        <div class="col-4">
+            Ingredient and Tool Shelf:
             <div id="ingredients-shelf">
                 {% for ingred in  drink_info.ingredients %}
-                    {{ingred}}<br>
+                    <input type="button" class="ingredient_button" value="{{ingred}}"></input>
                 {% endfor %}
             </div>
         </div>
     </div>
+    
     <div class="row">
-        <div class="col-12">
-            Tools:
+        <div class="col-4">
             <div id="tools-shelf">
                 {% for tool in  drink_info.tools %}
-                    {{tool}}<br>
+                    <input type="button" class="ingredient_button" value="{{tool}}"></input>
                 {% endfor %}
             </div>
         </div>
+        <div class="col-8">
+            <div id="cup_image">
+                <img src="https://media.istockphoto.com/photos/blue-mug-picture-id1176776065?s=612x612" alt="cup" width="450" height="500">
+            </div>
+        </div>
     </div>
+   
 
 {% endblock %}
