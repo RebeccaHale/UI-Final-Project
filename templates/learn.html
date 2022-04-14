@@ -18,25 +18,24 @@
             Ingredient and Tool Shelf:
             <div id="ingredients-shelf">
                 {% for ingred in  drink_info.ingredients %}
-                    {{ingred}}<br>
+                    <input type="button" class="ingredient_button" value="{{ingred}}"></input>
                 {% endfor %}
             </div>
         </div>
     </div>
+    
     <div class="row">
         <div class="col-12">
             <br>
             <div id="tools-shelf">
                 {% for tool in  drink_info.tools %}
-                    {{tool}}<br>
+                    <input type="button" class="ingredient_button" value="{{tool}}"></input>
                 {% endfor %}
             </div>
         </div>
     </div>
     <div class="row">
-
        <div class="col-6" id="step_instructions">
-		
        </div>	
        <div class="col-6">
 		<button id="learn_next_step_button">
@@ -46,3 +45,4 @@
     </div>
 
 {% endblock %}
+
