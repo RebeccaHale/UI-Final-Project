@@ -14,6 +14,9 @@ function displaythisstep(){
 
 $(document).ready(function(){
    displaythisstep()
+   $(".ingredient_button").click(function(){
+	   alert("Step completed, proceed to next step.")
+   })
    $("#learn_next_step_button").click(function(){
 	if(x<parseInt(drink_info.number_steps)-1){
 		
