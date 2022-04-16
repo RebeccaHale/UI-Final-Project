@@ -30,7 +30,7 @@ function checkAnswer(button){
     else{
         //wrong answer
         console.log("wrong answer")
-        $("#chosen_step").text("Incorrect! You chose:" + choice  + ". Correct answer is:" + drink_info.directions[current_step])
+        $("#chosen_step").text("Incorrect! You chose: " + choice  + ". Correct answer is: " + drink_info.directions[current_step])
 	
 
     }
