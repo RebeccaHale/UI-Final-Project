@@ -82,7 +82,8 @@ function checkAnswer(button){
         let new_entry = {
             time: time,
             user_choices: user_choices,
-            name: drink_info.name
+            name: drink_info.name,
+            score: num_correct
         }
 
         // ajax post
