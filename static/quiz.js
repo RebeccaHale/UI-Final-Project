@@ -70,7 +70,7 @@ function checkAnswer(button){
 
         // display feedback
         $("#chosen_step").text("Congrats! You finished the quiz. Score: ")
-
+        $("#exit").text("Click on a drink type in the navigation bar to exit.")
         // set quiz over
         quiz_over = true
 
@@ -109,4 +109,6 @@ function checkAnswer(button){
     } 
     
 }
+
+
 
