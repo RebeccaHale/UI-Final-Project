@@ -1,9 +1,13 @@
-let num_correct = 0
+// variables for quiz step checking
 let current_step = 0
+let quiz_over = false
+
+// log for user choices
+let user_choices = {}
+
 $(document).ready(function(){
-    //need iterate through steps and add UI for ingredients
-    //need to add back end saving of user input, keeping track of user quiz score
-    
+
+    // click listeners
     for(x of drink_info.ingredients){
         element = document.getElementById(x)
         element.onclick = function(){checkAnswer(this)};
@@ -14,34 +18,94 @@ $(document).ready(function(){
         element = document.getElementById(x)
         element.onclick = function(){checkAnswer(this)};
     }
+
 })
 
-
+// check answer
 function checkAnswer(button){
-    //console.log(x.value)
-    choice = button.value
-    $("#chosen_step").empty()
-    if(drink_info.directions[current_step] == drink_info.match[choice]){
-        //corect answer
-        num_correct = num_correct+1
-        $("#chosen_step").text("Correct! You chose: "+ choice)
-	
-    }   
-    else{
-        //wrong answer
-        console.log("wrong answer")
-        $("#chosen_step").text("Incorrect! You chose: " + choice  + ". Correct answer is: " + drink_info.directions[current_step])
-	
+    
+    // if the quiz is not finished
+    if (!quiz_over) {
+        // get user choice
+        choice = button.value
+        $("#chosen_step").empty()
 
+        // store user choice
+        user_choices[current_step + 1] = drink_info.match[choice];
+
+        // if correct answer is chosen
+        if(drink_info.directions[current_step] == drink_info.match[choice]){
+
+            // increment num correct
+            num_correct = num_correct + 1
+
+            // display feedback
+            $("#chosen_step").text("Correct! You chose: "+ choice)
+        
+        }   
+
+        // if wrong answer is chosen
+        else{
+            
+            // display feedback
+            $("#chosen_step").text("Incorrect! You chose: " + choice  + ". Correct answer is: " + drink_info.directions[current_step])
+
+        }
+
+        // move on to next step
+        current_step = current_step + 1
     }
+
+    // display new score
     $("#current_score").text(num_correct+ "/" + drink_info.number_steps)
-	current_step = current_step+1
-    if(current_step == drink_info.number_steps){
-        //end of quiz
-        //do something else
-    }
-	console.log(drink_info.directions[x])
-
     
 
+    // if the quiz has been finished, just move on
+    if (quiz_over) {
+        console.log("Quiz already over!")
+    }
+
+    // if the quiz just finished, log the user choices to backend
+    else if (current_step == drink_info.number_steps){
+
+        // display feedback
+        $("#chosen_step").text("Congrats! You finished the quiz. Score: ")
+
+        // set quiz over
+        quiz_over = true
+
+        // get date + time
+        let dt = new Date();
+        let time = dt.getHours() + ":" + dt.getMinutes() + ":" + dt.getSeconds();
+
+        // make new entry for backend
+        let new_entry = {
+            time: time,
+            user_choices: user_choices,
+            name: drink_info.name
+        }
+
+        // ajax post
+        $.ajax({
+            type: "POST",
+            url: "add",                
+            dataType : "json",
+            contentType: "application/json; charset=utf-8",
+            data : JSON.stringify(new_entry),
+            success: function(result){
+                console.log(result);
+                console.log(result["user_choices"])
+            },
+            error: function(request, status, error){
+                console.log("Error");
+                console.log(request)
+                console.log(status)
+                console.log(error)
+            }
+        });
+        
+
+    } 
+    
 }
+
