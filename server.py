@@ -172,9 +172,24 @@ def add_user_choices():
     global entry_num
 
     json_data = request.get_json() 
-    print(json_data)
+    entry_to_save = json_data
+    entry_to_save["type"] = "quiz"
 
-    user_choices[entry_num] = json_data
+    user_choices[entry_num] = entry_to_save
+    entry_num += 1
+
+    return jsonify(user_choices = user_choices)
+
+@app.route('/learn/add', methods=['GET', 'POST'])
+def add_user_choices2():
+    global user_choices
+    global entry_num
+
+    json_data = request.get_json() 
+    entry_to_save = json_data
+    entry_to_save["type"] = "learn"
+
+    user_choices[entry_num] = entry_to_save
     entry_num += 1
 
     return jsonify(user_choices = user_choices)
@@ -182,5 +197,7 @@ def add_user_choices():
 
 if __name__ == '__main__':
    app.run(debug = True)
+
+
 
 
