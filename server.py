@@ -132,6 +132,11 @@ ingredient_tool_data = {
         "image": "https://media.istockphoto.com/photos/bottle-of-honey-picture-id177231613?s=612x612"
     },
 }
+
+entry_num = 1
+
+user_choices = {}
+
 # ROUTES
 
 @app.route('/')
@@ -160,9 +165,22 @@ def quiz(id=None):
 
 # AJAX FUNCTIONS
 
+# add new entry to user data
+@app.route('/quiz/add', methods=['GET', 'POST'])
+def add_user_choices():
+    global user_choices
+    global entry_num
+
+    json_data = request.get_json() 
+    print(json_data)
+
+    user_choices[entry_num] = json_data
+    entry_num += 1
+
+    return jsonify(user_choices = user_choices)
+
+
 if __name__ == '__main__':
    app.run(debug = True)
-
-
 
 
