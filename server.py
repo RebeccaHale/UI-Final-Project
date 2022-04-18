@@ -119,7 +119,7 @@ ingredient_tool_data = {
         "id": "9",
         "name": "Mini Marshmallows",
         "type": "ingredient",
-        "image": "https://media.istockphoto.com/photos/cappuccino-picture-id173245886?s=612x612"
+        "image": "https://media.istockphoto.com/photos/delicious-puffy-marshmallows-on-lilac-background-flat-lay-picture-id1328289938?s=612x612"
     },
     "10": {
         "id": "10",
