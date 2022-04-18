@@ -1,7 +1,9 @@
 from flask import Flask
 from flask import render_template
-from flask import Response, request, jsonify
+from flask import Response, request, jsonify, session
+import datetime
 app = Flask(__name__)
+app.secret_key = b'39153655e83ab04d954b8c5efee7019c50ea6145cc55373f60930e925fa98f71'
 
 drink_data = {
     "1": {
@@ -11,7 +13,7 @@ drink_data = {
         "ingredients": ["Coffee Powder", "White Sugar", "Milk", "Water"],
         "tools": ["Microwave", "Whisk"],
         "directions": ["Add White Sugar", "Add Coffee Powder", "Add Water", "Whisk Ingredients", "Add Milk", "Whisk Ingredients", "Microwave Ingredients"],
-        "match" : 
+        "match" :
         {
             "Coffee Powder": "Add Coffee Powder",
             "White Sugar": "Add White Sugar",
@@ -30,7 +32,7 @@ drink_data = {
         "ingredients": ["Matcha Powder", "Milk", "Water", "Honey"],
         "tools": ["Microwave", "Whisk"],
         "directions": ["Add Water", "Microwave Ingredients", "Add Matcha Powder", "Whisk Ingredients", "Add Milk", "Add Honey", "Whisk Ingredients", "Microwave Ingredients"],
-        "match": 
+        "match":
         {
             "Matcha Powder": "Add Matcha Powder",
             "Milk": "Add Milk",
@@ -49,7 +51,7 @@ drink_data = {
         "ingredients": ["Cocoa Powder", "White Sugar", "Milk", "Vanilla Extract", "Mini Marshmallows"],
         "tools": ["Microwave", "Whisk"],
         "directions": ["Add Milk", "Microwave Ingredients", "Add Cocoa Powder", "Add White Sugar", "Whisk Ingredients", "Add Mini Marshmallows", "Microwave Ingredients"],
-        "match": 
+        "match":
         {
             "Cocoa Powder": "Add Cocoa Powder",
             "White Sugar": "Add White Sugar",
@@ -141,10 +143,14 @@ user_choices = {}
 
 @app.route('/')
 def layout():
-   return render_template('layout.html')   
+   return render_template('layout.html')
 
 @app.route('/learn/<id>')
 def learn_coffee(id=None):
+    global user_choices
+    userentrylearningtime=datetime.datetime.now()
+    user_choices["userentrylearningtime"]=userentrylearningtime
+
     drink_info = drink_data[id]
     return render_template('learn.html', drink_info=drink_info, ingredient_tool_data=ingredient_tool_data)
 
@@ -171,7 +177,7 @@ def add_user_choices():
     global user_choices
     global entry_num
 
-    json_data = request.get_json() 
+    json_data = request.get_json()
     entry_to_save = json_data
     entry_to_save["type"] = "quiz"
 
@@ -185,7 +191,7 @@ def add_user_choices2():
     global user_choices
     global entry_num
 
-    json_data = request.get_json() 
+    json_data = request.get_json()
     entry_to_save = json_data
     entry_to_save["type"] = "learn"
 
@@ -197,7 +203,3 @@ def add_user_choices2():
 
 if __name__ == '__main__':
    app.run(debug = True)
-
-
-
-

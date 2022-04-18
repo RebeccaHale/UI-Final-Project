@@ -8,7 +8,7 @@
 
 <!-- jquery -->
   <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>  
+  <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
   <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
   <!-- Bootstrap CSS -->
@@ -22,9 +22,9 @@
     <title>Baby Barista</title>
   </head>
   <body>
-    
 
-    
+
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container">
     <a class="navbar-brand" href="/">Baby Barista</a>
@@ -38,12 +38,12 @@
         </form>
         <form id="target_other" action="/view/3">
           <input type="submit" id="other" value="Other">
-        </form> 
+        </form>
       </div>
     </div>
   </div>
 </nav>
-    <div class="container">   
+    <div class="container">
         {% block content %}
           <div class="row">
             <div class="col-12">
@@ -53,12 +53,19 @@
           <div class="row">
             <div class="col-12">
               <div id="welcome-explanation"> Please navigate to your beverage category of choice to kickstart your drink making skills! </div>
+
+
+            </div>
+
+          </div>
+          <div class="row">
+            <div class="col-12">
+                <a href="/front/1">
+                <input type="button" value="Click to begin!"></input>
+               </a>
             </div>
           </div>
         {% endblock %}
     </div>
   </body>
 </html>
-
-
-
