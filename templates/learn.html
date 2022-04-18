@@ -2,11 +2,11 @@
 
 {% block content %}
     <script type="text/javascript" src="{{ url_for('static', filename = 'learn.js') }}"></script>
-    
+
     <script>
         let drink_info = {{drink_info|tojson}}
         let ingredient_tool_data = {{ingredient_tool_data|tojson}}
-	
+
     </script>
     <div class="row">
         <div class="col-12">
@@ -25,11 +25,11 @@
         <div class="col-4" id="step_instructions"></div>
         <div class="col-4">
             <button id="learn_next_step_button">
-                Next Step 
+                Next Step
             </button>
            </div>
     </div>
-    
+
     <div class="row">
         <div class="col-4">
             <div id="tools-shelf">
@@ -44,7 +44,19 @@
             </div>
         </div>
     </div>
-   
 
+
+<div id="shelf">
+
+
+          {% for num,ingretool in ingredient_tool_data.items() %}
+          <div class="row">
+            <div class="col-12">
+              Behold the {{ingretool.name}}
+               <img src="{{ingretool.image}}" alt="Picture of {{ingretool.name}}" width="50" height="50">
+            </div>
+          </div>
+          {% endfor %}
+
+</div>
 {% endblock %}
-
