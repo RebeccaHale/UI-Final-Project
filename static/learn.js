@@ -64,17 +64,20 @@ function update_step(){
     }
     
 }
-
 $(document).ready(function(){
     $("#step_label").text("Step: " + drink_info.directions[step])
     $(".ingredient_label").draggable({
         revert: "invalid",
         start: function(e, ui) {
             current_drag = $(this).text()
+            if(current_drag==drink_info.directions[step]){
+                $(this).addClass("acceptable")
+            }
         }
         
     });
     $("#cup").droppable({
+        accept: ".acceptable",
         drop: function(event, ui) {
             current_click = current_drag
             current_drag = ""
@@ -97,3 +100,4 @@ $(document).ready(function(){
     
 
 })
+
