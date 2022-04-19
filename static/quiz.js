@@ -97,10 +97,18 @@ $(document).ready(function(){
         revert: "invalid",
         start: function(e, ui) {
             current_drag = $(this).text()
+            if(current_drag==drink_info.directions[step]){
+                $(this).addClass("acceptable")
+            }
+            else{
+                console.log("mistake!")
+                mistake()
+            }
         }
         
     });
     $("#cup").droppable({
+        accept: ".acceptable",
         drop: function(event, ui) {
             current_click = current_drag
             current_drag = ""
