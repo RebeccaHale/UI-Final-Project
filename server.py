@@ -12,7 +12,7 @@ drink_data = {
         "type": "Coffee",
         "ingredients": ["Coffee Powder", "White Sugar", "Milk", "Water"],
         "tools": ["Microwave", "Whisk"],
-        "directions": ["Add White Sugar", "Add Coffee Powder", "Add Water", "Whisk Ingredients", "Add Milk", "Whisk Ingredients", "Microwave Ingredients"],
+        "directions": ["White Sugar", "Coffee Powder", "Water", "Whisk", "Milk", "Whisk", "Microwave"],
         "match" :
         {
             "Coffee Powder": "Add Coffee Powder",
@@ -22,6 +22,7 @@ drink_data = {
             "Microwave": "Microwave Ingredients",
             "Whisk": "Whisk Ingredients"
         },
+        
         "number_steps": "7",
         "image": "https://media.istockphoto.com/photos/cappuccino-picture-id173245886?s=612x612"
     },
@@ -31,7 +32,7 @@ drink_data = {
         "type": "Tea",
         "ingredients": ["Matcha Powder", "Milk", "Water", "Honey"],
         "tools": ["Microwave", "Whisk"],
-        "directions": ["Add Water", "Microwave Ingredients", "Add Matcha Powder", "Whisk Ingredients", "Add Milk", "Add Honey", "Whisk Ingredients", "Microwave Ingredients"],
+        "directions": ["Water", "Microwave", "Matcha Powder", "Whisk", "Milk", "Honey", "Whisk", "Microwave"],
         "match":
         {
             "Matcha Powder": "Add Matcha Powder",
@@ -50,7 +51,7 @@ drink_data = {
         "type": "Other",
         "ingredients": ["Cocoa Powder", "White Sugar", "Milk", "Vanilla Extract", "Mini Marshmallows"],
         "tools": ["Microwave", "Whisk"],
-        "directions": ["Add Milk", "Microwave Ingredients", "Add Cocoa Powder", "Add White Sugar", "Whisk Ingredients", "Add Mini Marshmallows", "Microwave Ingredients"],
+        "directions": ["Milk", "Microwave", "Cocoa Powder", "White Sugar", "Whisk", "Mini Marshmallows", "Microwave"],
         "match":
         {
             "Cocoa Powder": "Add Cocoa Powder",
@@ -139,6 +140,8 @@ entry_num = 1
 
 user_choices = {}
 
+step = 0
+score = 0
 # ROUTES
 
 @app.route('/')
@@ -146,13 +149,13 @@ def layout():
    return render_template('layout.html')
 
 @app.route('/learn/<id>')
-def learn_coffee(id=None):
+def learn(id=None):
     global user_choices
     userentrylearningtime=datetime.datetime.now()
     user_choices["userentrylearningtime"]=userentrylearningtime
 
     drink_info = drink_data[id]
-    return render_template('learn.html', drink_info=drink_info, ingredient_tool_data=ingredient_tool_data)
+    return render_template('learn.html', drink_info=drink_info, ingredient_tool_data=ingredient_tool_data, step=step)
 
 @app.route('/view/<id>')
 def view(id=None):
@@ -167,7 +170,7 @@ def front(id=None):
 @app.route('/quiz/<id>')
 def quiz(id=None):
     drink_info = drink_data[id]
-    return render_template('quiz.html', drink_info=drink_info, ingredient_tool_data=ingredient_tool_data)
+    return render_template('quiz.html', drink_info=drink_info, ingredient_tool_data=ingredient_tool_data, step=step, score=score)
 
 # AJAX FUNCTIONS
 
@@ -201,5 +204,20 @@ def add_user_choices2():
     return jsonify(user_choices = user_choices)
 
 
+@app.route('/update_step', methods=['GET', 'POST'])
+def update_step():
+    global term
+    json_data = request.get_json()   
+    step = json_data
+    return jsonify(step=step)
+
+@app.route('/update_score', methods=['GET', 'POST'])
+def update_score():
+    global term
+    json_data = request.get_json()   
+    score = json_data
+    return jsonify(score=score)
+
 if __name__ == '__main__':
    app.run(debug = True)
+
