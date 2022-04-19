@@ -1,101 +1,62 @@
-// variables for quiz step checking
-let current_step = 0
-let quiz_over = false
-
-// log for user choices
-let user_choices = {}
-
-$(document).ready(function(){
-
-    // click listeners
-    for(x of drink_info.ingredients){
-        element = document.getElementById(x)
-        element.onclick = function(){checkAnswer(this)};
-        
+let current_click = ""
+let current_drag = ""
+/*function run(current_step, current_num){
+    console.log("step = " + current_num + ": " + current_step)
+    let isTool = 0
+    if(current_step.includes("Ingredients")==true){
+        isTool++
     }
-
-    for(x of drink_info.tools){
-        element = document.getElementById(x)
-        element.onclick = function(){checkAnswer(this)};
+    if(isTool){
+        //fix later 
+        return 1
     }
-
-})
-
-// check answer
-function checkAnswer(button){
-    
-    // if the quiz is not finished
-    if (!quiz_over) {
-        // get user choice
-        choice = button.value
-        $("#chosen_step").empty()
-
-        // store user choice
-        user_choices[current_step + 1] = drink_info.match[choice];
-
-        // if correct answer is chosen
-        if(drink_info.directions[current_step] == drink_info.match[choice]){
-
-            // increment num correct
-            num_correct = num_correct + 1
-
-            // display feedback
-            $("#chosen_step").text("Correct! You chose: "+ choice)
-        
-        }   
-
-        // if wrong answer is chosen
-        else{
-            
-            // display feedback
-            $("#chosen_step").text("Incorrect! You chose: " + choice  + ". Correct answer is: " + drink_info.directions[current_step])
-
+    else{
+        //check draggable
+        current_ingredient = current_step.substring(4)
+        if(current_click==current_ingredient){
+            return 1
         }
-
-        // move on to next step
-        current_step = current_step + 1
+        return 0
     }
-
-    // display new score
-    $("#current_score").text(num_correct+ "/" + drink_info.number_steps)
-    
-
-    // if the quiz has been finished, just move on
-    if (quiz_over) {
-        console.log("Quiz already over!")
-    }
-
-    // if the quiz just finished, log the user choices to backend
-    else if (current_step == drink_info.number_steps){
-
-        // display feedback
-        $("#chosen_step").text("Congrats! You finished the quiz. Score: ")
-        $("#exit").text("Click on a drink type in the navigation bar to exit.")
-        // set quiz over
-        quiz_over = true
-
-        // get date + time
-        let dt = new Date();
-        let time = dt.getHours() + ":" + dt.getMinutes() + ":" + dt.getSeconds();
-
-        // make new entry for backend
-        let new_entry = {
-            time: time,
-            user_choices: user_choices,
-            name: drink_info.name,
-            score: num_correct
+}*/
+function mistake(){
+    score=score+1
+    $.ajax({
+        type: "POST",
+        url: "../update_score",                
+        dataType : "json",
+        contentType: "application/json; charset=utf-8",
+        data : JSON.stringify(score),
+        success: function(result){
+            //check that step in server is updating
+            //$("#step_label").text("Step: " + drink_info.directions[step])
+        },
+        error: function(request, status, error){
+            console.log("Error");
+            console.log(request)
+            console.log(status)
+            console.log(error)
         }
-
-        // ajax post
+    });
+}
+function update_step(){
+    step = step + 1
+    if(step==drink_info.number_steps){//finished the recipe
+        step=0
+        console.log("final ajax score=" + score)
+        $("#score_label").text("Congratulations! You finished your recipe. ")
+        $("#score_label").append('You made ' + score + " mistake(s)")
         $.ajax({
             type: "POST",
-            url: "add",                
+            url: "../update_step",                
             dataType : "json",
             contentType: "application/json; charset=utf-8",
-            data : JSON.stringify(new_entry),
+            data : JSON.stringify(step),
             success: function(result){
-                console.log(result);
-                console.log(result["user_choices"])
+                $("#step_label").text("Steps complete: " + drink_info.number_steps + " out of " + drink_info.number_steps)
+                let ref = "window.location.href=" + "'/'";
+                $("#score_label").append('<input type="button" id="quiz_button" value="Go to the home page!" onclick="' + ref + '"></input>')
+            
             },
             error: function(request, status, error){
                 console.log("Error");
@@ -104,11 +65,74 @@ function checkAnswer(button){
                 console.log(error)
             }
         });
-        
 
-    } 
+        score=-1
+        mistake()
+    }
+    else{
+        $.ajax({
+            type: "POST",
+            url: "../update_step",                
+            dataType : "json",
+            contentType: "application/json; charset=utf-8",
+            data : JSON.stringify(step),
+            success: function(result){
+                //check that step in server is updating
+                //$("#step_label").text("Step: " + drink_info.directions[step])
+            },
+            error: function(request, status, error){
+                console.log("Error");
+                console.log(request)
+                console.log(status)
+                console.log(error)
+            }
+        });
+    }
     
 }
+
+$(document).ready(function(){
+    //$("#step_label").text("Step: " + drink_info.directions[step])
+    $(".ingredient_label").draggable({
+        revert: "invalid",
+        start: function(e, ui) {
+            current_drag = $(this).text()
+        }
+        
+    });
+    $("#cup").droppable({
+        drop: function(event, ui) {
+            current_click = current_drag
+            current_drag = ""
+            if(current_click==drink_info.directions[step]){
+                update_step()
+                $("#step_label").text("Steps complete: " + step + " out of " + drink_info.number_steps)
+                //console.log("Step completed! new step: " + drink_info.directions[step])
+            }
+            else{
+                console.log("mistake!")
+                mistake()
+            }
+        }
+    })
+    /*$.each(steps, function( value ) {
+        console.log(  steps[value] );
+    });*/
+
+    $(".tool_button").click(function(){
+        current_click = $(this).val()
+        if(current_click==drink_info.directions[step]){
+            update_step()
+            $("#step_label").text("Steps complete: " + step + " out of " + drink_info.number_steps)
+        }
+        else{
+            console.log("mistake!")
+            mistake()
+        }
+    })
+    
+
+})
 
 
 
