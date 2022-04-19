@@ -6,42 +6,47 @@
     <script>
         let drink_info = {{drink_info|tojson}}
         let ingredient_tool_data = {{ingredient_tool_data|tojson}}
-        let num_correct = 0
+        let step = {{step|tojson}}
+        let score = {{score|tojson}}
     </script>
     <div class="row">
         <div class="col-12">
-            <div id="heading"> Quiz: How to make a {{drink_info.name}} </div>
+            <div id="drink_name"> QUIZ: Can you make a {{drink_info.name}}? </div>
         </div>
     </div>
-    
     <div class="row">
-        <div class="col-3">
-            Ingredient and Tool Shelf:
-            <div id="ingredients-shelf">
+        <div class="col-6">
+            <div id="shelf_label"> Ingredient and Tool Shelf: </div>
+        </div>
+        <div class="col-6">
+            <div id="step_label">Steps complete: {{score}} out of {{drink_info.number_steps}}</div>
+            <div id="score_label"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <div id="drink_ingredients"> 
                 {% for ingred in  drink_info.ingredients %}
-                    <input type="button" class="ingredient_button" value="{{ingred}}" id ="{{ingred}}" ></input>
+                    <div class="ingredient_label" >{{ingred}}</div>
                 {% endfor %}
             </div>
         </div>
-        <div class="col-3" id="chosen_step"></div>
-        <div class="col-3" id="current_score"></div>
-        <div class="col-3" id="exit"></div>
+        <div class="col-6">
+            <div class="row">
+                <div class="col-12">
+                    <div id="cup">cup</div>
+                </div>
+            </div>
+        </div>
     </div>
-    
     <div class="row">
-        <div class="col-4">
-            <div id="tools-shelf">
+        <div class="col-6">
+            <div id="drink_tools">
                 {% for tool in  drink_info.tools %}
-                    <input type="button" class="ingredient_button" value="{{tool}}" id ="{{tool}}" ></input>
+                    <input type="button" class="tool_button" value="{{tool}}"></input>
                 {% endfor %}
             </div>
         </div>
-        <div class="col-8">
-            <div id="cup_image">
-                <img src="https://media.istockphoto.com/photos/blue-mug-picture-id1176776065?s=612x612" alt="cup" width="450" height="500">
-            </div>
-        </div>
     </div>
-   
 
 {% endblock %}
