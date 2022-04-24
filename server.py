@@ -67,6 +67,45 @@ drink_data = {
     }
 }
 
+ingredient_colors = {
+    "Cocoa Powder": {
+        "color": [90,39,21,0.95],
+        "whiskable": True
+    },
+    "Coffee Powder": {
+        "color": [56,26,16,0.95],
+        "whiskable": True
+    },
+    "Honey": {
+        "color": [235,159,33,0.8],
+        "whiskable": True
+    },
+    "Matcha Powder": {
+        "color": [90,101,12,0.95],
+        "whiskable": True
+    },
+    "Milk": {
+        "color": [251, 247, 236,0.8],
+        "whiskable": True
+    },
+    "Mini Marshmallows": {
+        "color": [251,247,236,0.8],
+        "whiskable": False
+    },
+    "Vanilla Extract": {
+        "color": [165,106,20,0.8],
+        "whiskable": True
+    },
+    "Water": {
+        "color": [235,244,247,0.8],
+        "whiskable": True
+    },
+    "White Sugar": {
+        "color": [251,247,236,0.8],
+        "whiskable": True
+    }
+}
+
 ingredient_tool_data = {
     "1": {
         "id": "1",
@@ -155,7 +194,7 @@ def learn(id=None):
     user_choices["userentrylearningtime"]=userentrylearningtime
 
     drink_info = drink_data[id]
-    return render_template('learn.html', drink_info=drink_info, ingredient_tool_data=ingredient_tool_data, step=step)
+    return render_template('learn.html', drink_info=drink_info, ingredient_tool_data=ingredient_tool_data, step=step, ingredient_colors=ingredient_colors)
 
 @app.route('/view/<id>')
 def view(id=None):
@@ -170,7 +209,7 @@ def front(id=None):
 @app.route('/quiz/<id>')
 def quiz(id=None):
     drink_info = drink_data[id]
-    return render_template('quiz.html', drink_info=drink_info, ingredient_tool_data=ingredient_tool_data, step=step, score=score)
+    return render_template('quiz.html', drink_info=drink_info, ingredient_tool_data=ingredient_tool_data, step=step, score=score, ingredient_colors=ingredient_colors)
 
 # AJAX FUNCTIONS
 
