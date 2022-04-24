@@ -7,7 +7,7 @@ let current_drag = ""
         isTool++
     }
     if(isTool){
-        //fix later 
+        //fix later
         return 1
     }
     else{
@@ -23,7 +23,7 @@ function mistake(){
     score=score+1
     $.ajax({
         type: "POST",
-        url: "../update_score",                
+        url: "../update_score",
         dataType : "json",
         contentType: "application/json; charset=utf-8",
         data : JSON.stringify(score),
@@ -48,7 +48,7 @@ function update_step(){
         $("#score_label").append('You made ' + score + " mistake(s)")
         $.ajax({
             type: "POST",
-            url: "../update_step",                
+            url: "../update_step",
             dataType : "json",
             contentType: "application/json; charset=utf-8",
             data : JSON.stringify(step),
@@ -56,7 +56,7 @@ function update_step(){
                 $("#step_label").text("Steps complete: " + drink_info.number_steps + " out of " + drink_info.number_steps)
                 let ref = "window.location.href=" + "'/'";
                 $("#score_label").append('<input type="button" id="quiz_button" value="Go to the home page!" onclick="' + ref + '"></input>')
-            
+
             },
             error: function(request, status, error){
                 console.log("Error");
@@ -72,7 +72,7 @@ function update_step(){
     else{
         $.ajax({
             type: "POST",
-            url: "../update_step",                
+            url: "../update_step",
             dataType : "json",
             contentType: "application/json; charset=utf-8",
             data : JSON.stringify(step),
@@ -88,7 +88,7 @@ function update_step(){
             }
         });
     }
-    
+
 }
 
 function update_cup(ingredient) {
@@ -142,7 +142,7 @@ function whisk() {
             alpha = finalResult[3];
             finalResult = colorMixer(finalResult, colors[i], alpha);
         }
-        
+
     }
 
     const rAvg = finalResult[0];
@@ -163,7 +163,8 @@ $(document).ready(function(){
     $(".ingredient_label").draggable({
         revert: "invalid",
         start: function(e, ui) {
-            current_drag = $(this).text()
+            //current_drag = $(this).text()
+            current_drag = $(this).attr("id")
             
             if(current_drag==drink_info.directions[step]){
                 $(this).addClass("acceptable")
@@ -173,7 +174,7 @@ $(document).ready(function(){
                 mistake()
             }
         }
-        
+
     });
     $("#cup").droppable({
         accept: ".acceptable",
@@ -211,9 +212,6 @@ $(document).ready(function(){
             mistake()
         }
     })
-    
+
 
 })
-
-
-

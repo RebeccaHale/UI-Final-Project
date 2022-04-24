@@ -7,7 +7,7 @@ let current_drag = ""
         isTool++
     }
     if(isTool){
-        //fix later 
+        //fix later
         return 1
     }
     else{
@@ -26,7 +26,7 @@ function update_step(){
         step=0
         $.ajax({
             type: "POST",
-            url: "../update_step",                
+            url: "../update_step",
             dataType : "json",
             contentType: "application/json; charset=utf-8",
             data : JSON.stringify(step),
@@ -46,7 +46,7 @@ function update_step(){
     else{
         $.ajax({
             type: "POST",
-            url: "../update_step",                
+            url: "../update_step",
             dataType : "json",
             contentType: "application/json; charset=utf-8",
             data : JSON.stringify(step),
@@ -62,7 +62,7 @@ function update_step(){
             }
         });
     }
-    
+
 }
 
 function update_cup(ingredient) {
@@ -116,7 +116,7 @@ function whisk() {
             alpha = finalResult[3];
             finalResult = colorMixer(finalResult, colors[i], alpha);
         }
-        
+
     }
 
     const rAvg = finalResult[0];
@@ -135,12 +135,16 @@ $(document).ready(function(){
     $(".ingredient_label").draggable({
         revert: "invalid",
         start: function(e, ui) {
-            current_drag = $(this).text()
+            current_drag = $(this).attr("id")
+						//console.log(current_drag)
+						//console.log(drink_info.directions[step])
+
+						//$(this).text()
             if(current_drag==drink_info.directions[step]){
                 $(this).addClass("acceptable")
             }
         }
-        
+
     });
     $("#cup").droppable({
         accept: ".acceptable",
@@ -168,7 +172,6 @@ $(document).ready(function(){
             }
         }
     })
-    
+
 
 })
-

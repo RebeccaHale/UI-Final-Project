@@ -2,7 +2,7 @@
 
 {% block content %}
     <script type="text/javascript" src="{{ url_for('static', filename = 'quiz.js') }}"></script>
-    
+
     <script>
         let drink_info = {{drink_info|tojson}}
         let ingredient_tool_data = {{ingredient_tool_data|tojson}}
@@ -26,10 +26,22 @@
     </div>
     <div class="row">
         <div class="col-6">
-            <div id="drink_ingredients"> 
+            <div id="drink_ingredients">
+              {% for ingred in  drink_info.ingredients %}
+                {% for num,ingretool in ingredient_tool_data.items() %}
+                  {% if ingretool['name'] == ingred %}
+                    <div class="ingredient_label" id="{{ingred}}">{{ingred}}
+                    <img src="{{ingretool.image}}" alt="Picture of {{ingretool.name}}" width="50" height="50">
+                    </div>
+                  {% endif %}
+                {% endfor %}
+              {% endfor %}
+
+<!--
                 {% for ingred in  drink_info.ingredients %}
                     <div class="ingredient_label" >{{ingred}}</div>
                 {% endfor %}
+-->
             </div>
         </div>
         <div class="col-6">
@@ -37,9 +49,9 @@
                 <div class="col-12">
                     <div class = "cup-holder">
                         <div class = "cup-container" id = "cup">
-                            <div class = "cup"> 
+                            <div class = "cup">
                                 <div class = "drink-outline">
-                                    
+
                                 </div>
                             </div>
                         </div>
