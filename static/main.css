@@ -30,6 +30,17 @@
 :root {
     --background-cup: rgb(0, 0, 0);
 }
+
+#selection{
+    font-size: large;
+
+}
+
+#drink_name{
+    font-size: large;
+    font-weight:730;
+
+}
   
 .ingredient_label {
     display: inline-block;
