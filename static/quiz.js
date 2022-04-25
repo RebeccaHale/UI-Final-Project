@@ -41,6 +41,8 @@ function mistake(){
 }
 function update_step(){
     step = step + 1
+    $(".ingredient_label").removeClass("unacceptable")
+
     if(step==drink_info.number_steps){//finished the recipe
         step=0
         console.log("final ajax score=" + score)
@@ -165,13 +167,16 @@ $(document).ready(function(){
         start: function(e, ui) {
             //current_drag = $(this).text()
             current_drag = $(this).attr("id")
-            
+
             if(current_drag==drink_info.directions[step]){
                 $(this).addClass("acceptable")
+
             }
             else{
                 console.log("mistake!")
                 mistake()
+                $(this).addClass("unacceptable")
+
             }
         }
 
