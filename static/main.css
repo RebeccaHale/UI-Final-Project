@@ -1,3 +1,32 @@
+/*layout.html css*/
+
+#welcome{
+    margin: 50px;
+    font-size: 45px;
+    text-align: center
+}
+
+#welcome-explanation{
+    font-size: 25px;
+    text-align: center
+}
+
+#menu-coffee{
+    margin-top: 50px;
+    margin-left: 50px;
+}
+
+#menu-tea{
+    margin-top: 50px;
+    margin-left: 50px;
+}
+
+#menu-other{
+    margin-top: 50px;
+    margin-left: 50px;
+}
+/*end layout.html css*/
+
 :root {
     --background-cup: rgb(0, 0, 0);
 }
