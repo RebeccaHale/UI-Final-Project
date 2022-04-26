@@ -64,6 +64,54 @@ light gray -
 }
 /*end layout.html css*/
 
+/*start view css*/
+#selection-type{
+    color: rgb(87, 87, 87);
+    margin-top: 30px;
+    margin-bottom: 40px;
+    font-size: 18px;
+}
+#drink_current{
+    
+    font-weight: bold;
+    color: black;
+    font-size: 23px;
+    text-align: left;
+    padding-bottom: 15px;
+}
+.image-for-recipe{
+    margin-left: 100px;
+    text-align: left;
+}
+
+.make{
+    width: 200px;
+    background-color: rgb(149, 189, 149);
+    border: none;
+    height: 55px;
+    border-radius: 12px;
+    color: rgb(87, 87, 87);
+    cursor: pointer;
+}
+.make2{
+    width: 200px;
+    background-color: rgb(149, 189, 149);
+    border: none;
+    height: 55px;
+    border-radius: 12px;
+    color: rgb(87, 87, 87);
+    cursor: pointer;
+    border-top: 20px;
+}
+
+#update1{
+    text-align: right;
+}
+
+#update2{
+    text-align: left;
+}
+/*end view css*/
 
 :root {
     --background-cup: rgb(0, 0, 0);
