@@ -9,15 +9,18 @@
     </script>
    <div class="row">
         <div class="col-2">
-            <div id="drink_name"> {{drink_info.name}}:</div>
-        </div>
-        <div class="col-3">
-            <img src="{{drink_info.image}}" alt="{{drink_info.name}}" width="150" height="100">
+            <div id="drink_name_front"> {{drink_info.name}}:</div>
         </div>
     </div>
 
     <div class="row">
         <div class="col-6">
+            Ingredients:
+            <div id="ingredients-shelf">
+                {% for ingred in  drink_info.quantities %}
+                    {{ingred}}<br>
+                {% endfor %}
+            </div><br>
             Tools:
             <div id="tools-shelf">
                 {% for tool in  drink_info.tools %}
@@ -26,18 +29,8 @@
             </div>
         </div>
         <div class="col-6">
-            Ingredients:
-            <div id="ingredients-shelf">
-                {% for ingred in  drink_info.ingredients %}
-                    {{ingred}}<br>
-                {% endfor %}
-            </div>
-        </div>
-    </div>
-    
-    
-    <div class="row">
-        <div class="col-12">
+            <img src="{{drink_info.image}}" alt="{{drink_info.name}}" width="150" height="100">
+            <br>
             <input type="button" class="make" value="Click to begin!"></input>
         </div>
     </div>
