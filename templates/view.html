@@ -9,22 +9,20 @@
     </script>
     <div class="row">
         <div class="col-12">
-            <div id="selection"> {{drink_info.type}} Selection: </div>
+            <div id="selection-type"> {{drink_info.type}} Selection: </div>
         </div>
     </div>
     <div class="row">
-        <div class="col-3">
-            <div id="drink_name"> {{drink_info.name}}</div>
+        <div class="col-4 image-for-recipe">
+            <div id="drink_current"> {{drink_info.name}}</div>
+            <img src="{{drink_info.image}}" alt="{{drink_info.name}}" width="250" height="175">
         </div>
         <div class="col-3">
-            <img src="{{drink_info.image}}" alt="{{drink_info.name}}" width="150" height="100">
+            <div id="update1"></div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-3"></div>
         <div class="col-3">
-            <div id="update"></div>
+            <div id="update2"></div>
         </div>
     </div>
-
 {% endblock %}
+
