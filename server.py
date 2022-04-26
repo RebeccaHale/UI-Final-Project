@@ -23,7 +23,7 @@ drink_data = {
             "Microwave": "Microwave Ingredients",
             "Whisk": "Whisk Ingredients"
         },
-        
+        "taste": "A well-made cappuccino has incredible flavor and texture. It has a bold, bitter coffee taste and some sweetness from the naturally occurring lactose sugar in milk.",
         "number_steps": "7",
         "image": "https://media.istockphoto.com/photos/cappuccino-picture-id173245886?s=612x612"
     },
@@ -44,6 +44,7 @@ drink_data = {
             "Microwave": "Microwave Ingredients",
             "Whisk": "Whisk Ingredients"
         },
+        "taste": "A great matcha taste has vegetal grassy notes, sweet nuttiness, and pleasant bitter undertones.  It's popular to mix it up with steamed milk for an everyday matcha latte.",
         "number_steps": "8",
         "image": "https://media.istockphoto.com/photos/matcha-latte-green-milk-foam-cup-on-wood-table-at-cafe-trendy-powered-picture-id1325991061?s=612x612"
     },
@@ -65,6 +66,7 @@ drink_data = {
             "Microwave": "Microwave Ingredients",
             "Whisk": "Whisk Ingredients"
         },
+        "taste": "Hot chocolate is rich, it's creamy and it tastes very much like you're drinking a chocolate bar. Beloved by children and adults worldwide, you are sure to love this drink.",
         "number_steps": "7",
         "image": "https://media.istockphoto.com/photos/homemade-warm-hot-chocolate-picture-id1320380734?s=612x612"
     }
@@ -262,6 +264,9 @@ def update_score():
 
 if __name__ == '__main__':
    app.run(debug = True)
+
+
+
 
 
 
