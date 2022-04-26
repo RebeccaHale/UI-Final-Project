@@ -15,25 +15,26 @@
 
     <div class="row">
         <div class="col-6">
-            Ingredients:
+            <div class="shelf_label">Ingredients:</div>
             <div id="ingredients-shelf">
                 {% for ingred in  drink_info.quantities %}
                     {{ingred}}<br>
                 {% endfor %}
             </div><br>
-            Tools:
+            <div class="shelf_label">Tools:</div>
             <div id="tools-shelf">
                 {% for tool in  drink_info.tools %}
                     {{tool}}<br>
                 {% endfor %}
             </div>
         </div>
-        <div class="col-6">
-            <img src="{{drink_info.image}}" alt="{{drink_info.name}}" width="150" height="100">
-            <br>
+        <div class="col-6 righty">
+            <img src="{{drink_info.image}}" alt="{{drink_info.name}}" width="250" height="175">
+            <br><br>
             <input type="button" class="make" value="Click to begin!"></input>
         </div>
     </div>
 
 {% endblock %}
+
 
