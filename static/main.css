@@ -107,6 +107,7 @@ light gray -
     text-align: left;
     padding-bottom: 15px;
 }
+
 .image-for-recipe{
     margin-left: 100px;
     text-align: left;
@@ -132,12 +133,20 @@ light gray -
     border-top: 20px;
 }
 
+#drink_taste{
+    text-align: left;
+    border-top: 100px;
+    padding-top: 70px;
+    color: rgb(87, 87, 87);
+}
+
 #update1{
     text-align: right;
 }
 
 #update2{
-    text-align: left;
+    text-align: right;
+    padding-top: 15px;
 }
 /*end view css*/
 
@@ -226,3 +235,4 @@ light gray -
     border-radius: 15%;
     margin-top: 20px;
 }
+
