@@ -66,11 +66,29 @@ light gray -
 
 /*starting front css*/
 #drink_name_front{
-    font-weight: bold;
+    color: rgb(87, 87, 87);
+    margin-top: 30px;
+    margin-bottom: 40px;
+    font-size: 18px;
+}
+
+.shelf_label{
     color: black;
     font-size: 23px;
-    text-align: left;
-    padding-top: 50px;
+    margin-left: 50px;
+    margin-bottom: 10px;
+}
+
+#ingredients-shelf{
+    margin-left: 50px;
+}
+
+#tools-shelf{
+    margin-left: 50px;
+}
+
+.righty{
+    text-align: center;
 }
 
 /*end front css*/
