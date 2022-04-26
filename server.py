@@ -13,7 +13,8 @@ drink_data = {
         "ingredients": ["Coffee Powder", "White Sugar", "Milk", "Water"],
         "tools": ["Microwave", "Whisk"],
         "directions": ["White Sugar", "Coffee Powder", "Water", "Whisk", "Milk", "Whisk", "Microwave"],
-        "match" :
+        "quantities": ["Coffee Powder - 1/4 cup", "White Sugar - 1/4 cup", "Milk - 3/4 cup", "Water - 1/4 cup"],
+        "match": 
         {
             "Coffee Powder": "Add Coffee Powder",
             "White Sugar": "Add White Sugar",
@@ -33,6 +34,7 @@ drink_data = {
         "ingredients": ["Matcha Powder", "Milk", "Water", "Honey"],
         "tools": ["Microwave", "Whisk"],
         "directions": ["Water", "Microwave", "Matcha Powder", "Whisk", "Milk", "Honey", "Whisk", "Microwave"],
+        "quantities": ["Matcha Powder - 1 1/2 tsp", "Milk - 3/4 cup", "Water - 1 tbsp", "Honey - to taste"],
         "match":
         {
             "Matcha Powder": "Add Matcha Powder",
@@ -52,6 +54,7 @@ drink_data = {
         "ingredients": ["Cocoa Powder", "White Sugar", "Milk", "Vanilla Extract", "Mini Marshmallows"],
         "tools": ["Microwave", "Whisk"],
         "directions": ["Milk", "Microwave", "Cocoa Powder", "White Sugar", "Whisk", "Mini Marshmallows", "Microwave"],
+        "quantities": ["Cocoa Powder - 2 tbsp", "White Sugar - 2 tbsp", "Milk - 1 cup", "Mini Marshmallows - to taste"],
         "match":
         {
             "Cocoa Powder": "Add Cocoa Powder",
@@ -259,4 +262,6 @@ def update_score():
 
 if __name__ == '__main__':
    app.run(debug = True)
+
+
 
