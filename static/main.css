@@ -64,6 +64,16 @@ light gray -
 }
 /*end layout.html css*/
 
+/*starting front css*/
+#drink_name_front{
+    font-weight: bold;
+    color: black;
+    font-size: 23px;
+    text-align: left;
+    padding-top: 50px;
+}
+
+/*end front css*/
 /*start view css*/
 #selection-type{
     color: rgb(87, 87, 87);
