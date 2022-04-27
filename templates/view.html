@@ -2,7 +2,7 @@
 
 {% block content %}
     <script type="text/javascript" src="{{ url_for('static', filename = 'view.js') }}"></script>
-    
+
     <script>
         let drink_info = {{drink_info|tojson}}
         let ingredient_tool_data = {{ingredient_tool_data|tojson}}
@@ -26,4 +26,3 @@
         </div>
     </div>
 {% endblock %}
-

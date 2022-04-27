@@ -11,7 +11,16 @@ body {
     font-family: 'Merriweather';
 }
 /*layout.html css*/
+.naturaltanbackgroundcolor{
+  background-color: #e5d2a7;
+}
+.traditionaltanbackgroundcolor{
+  background-color: #97835e;
 
+}
+.populartanbackgroundcolor{
+  background-color: #ffeeae;
+}
 #welcome{
     margin: 50px;
     font-size: 45px;
@@ -56,14 +65,30 @@ body {
     text-align: center;
     margin-top: 140px;
 }
+.whitetext{
+  color: white;
+}
+.buttoncolors{
+    color: #36362c;
+    background-color: #5d907d;
 
+
+}
+.buttoncolors:hover{
+  color: #0f0f0d;
+  background-color: #dadada;
+
+}
 #btn_coffee{
     width: 200px;
-    background-color: rgb(149, 189, 149);
+    background-color: #5d907d;
+    /*rgb(149, 189, 149);*/
     border: none;
     height: 55px;
     border-radius: 12px;
-    color: rgb(87, 87, 87);
+    /*color: rgb(87, 87, 87);*/
+    /*color: #36362c;*/
+
     cursor: pointer;
 }
 
@@ -86,6 +111,10 @@ body {
     cursor: pointer;
     border: none;
     height: 35px;
+}
+.twelvepointborder{
+  border-radius: 12px;
+
 }
 /*end layout.html css*/
 
@@ -119,14 +148,14 @@ body {
 /*end front css*/
 /*start view css*/
 #selection-type{
-    color: rgb(153, 150, 150);
+  /*  color: rgb(153, 150, 150);*/
     margin-top: 30px;
     margin-bottom: 40px;
     font-size: 18px;
-    
+
 }
 #drink_current{
-    
+
     font-weight: bold;
     color: black;
     font-size: 23px;
@@ -141,11 +170,11 @@ body {
 
 .make{
     width: 200px;
-    background-color: rgb(149, 189, 149);
+    /*background-color: rgb(149, 189, 149);*/
     border: none;
     height: 55px;
     border-radius: 12px;
-    color: rgb(87, 87, 87);
+    /*color: rgb(87, 87, 87);*/
     cursor: pointer;
 }
 .make2{
@@ -157,6 +186,13 @@ body {
     color: rgb(87, 87, 87);
     cursor: pointer;
     border-top: 20px;
+}
+.LearnRecipe{
+/*tagging class*/
+}
+.RecipeQuiz{
+  /*tagging class*/
+
 }
 
 #drink_taste{
@@ -262,5 +298,3 @@ body {
     border-radius: 15%;
     margin-top: 20px;
 }
-
-
