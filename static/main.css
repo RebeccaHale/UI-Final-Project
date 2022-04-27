@@ -8,7 +8,12 @@ light gray - rgb(153, 150, 150);
 
 
 body {
-    font-family: 'Merriweather';
+    font-family: 'Mulish', sans-serif;
+}
+
+#branding{
+    font-family: 'IBM Plex Serif', serif;
+    font-size: 20px;
 }
 /*layout.html css*/
 .naturaltanbackgroundcolor{
@@ -27,6 +32,8 @@ body {
     text-align: center;
     font-weight: bold;
     color: black;
+    font-family: 'IBM Plex Serif', serif;
+    margin-bottom: 35px;
 }
 
 #welcome-explanation{
@@ -120,25 +127,29 @@ body {
 
 /*starting front css*/
 #drink_name_front{
-    color: rgb(87, 87, 87);
+    color: rgb(153, 150, 150);
     margin-top: 30px;
     margin-bottom: 40px;
     font-size: 18px;
+    font-family: 'IBM Plex Serif', serifs;
 }
 
 .shelf_label{
     color: black;
-    font-size: 23px;
-    margin-left: 50px;
-    margin-bottom: 10px;
+    font-size: 25px;
+    margin-left: 70px;
+    font-weight: bold;
+    margin-bottom: 8px;
 }
 
 #ingredients-shelf{
-    margin-left: 50px;
+    margin-left: 70px;
+    font-size: 17px;
 }
 
 #tools-shelf{
-    margin-left: 50px;
+    margin-left: 70px;
+    font-size: 17px;
 }
 
 .righty{
@@ -152,7 +163,11 @@ body {
     margin-top: 30px;
     margin-bottom: 40px;
     font-size: 18px;
+<<<<<<< HEAD
 
+=======
+    font-family: 'IBM Plex Serif', serif;
+>>>>>>> 0dc0bd91b254d824fde7a5e35809df0f2a706d50
 }
 #drink_current{
 
@@ -298,3 +313,9 @@ body {
     border-radius: 15%;
     margin-top: 20px;
 }
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> 0dc0bd91b254d824fde7a5e35809df0f2a706d50
