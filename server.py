@@ -66,7 +66,7 @@ drink_data = {
             "Microwave": "Microwave Ingredients",
             "Whisk": "Whisk Ingredients"
         },
-        "taste": "Hot chocolate is rich, it's creamy and it tastes very much like you're drinking a chocolate bar. Beloved by children and adults worldwide, you are sure to love this drink.",
+        "taste": "Hot chocolate is rich, it's creamy and it tastes very much like you're drinking a chocolate bar. Adored by children and adults worldwide, you are sure to love this drink.",
         "number_steps": "7",
         "image": "https://media.istockphoto.com/photos/homemade-warm-hot-chocolate-picture-id1320380734?s=612x612"
     }
