@@ -107,17 +107,20 @@ body {
 
 .shelf_label{
     color: black;
-    font-size: 23px;
-    margin-left: 50px;
-    margin-bottom: 10px;
+    font-size: 25px;
+    margin-left: 70px;
+    font-weight: bold;
+    margin-bottom: 8px;
 }
 
 #ingredients-shelf{
-    margin-left: 50px;
+    margin-left: 70px;
+    font-size: 17px;
 }
 
 #tools-shelf{
-    margin-left: 50px;
+    margin-left: 70px;
+    font-size: 17px;
 }
 
 .righty{
