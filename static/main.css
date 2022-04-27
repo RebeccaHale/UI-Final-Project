@@ -88,7 +88,7 @@ body {
 }
 #btn_coffee{
     width: 200px;
-    background-color: #5d907d;
+  /*  background-color: #5d907d;*/
     /*rgb(149, 189, 149);*/
     border: none;
     height: 55px;
@@ -163,11 +163,7 @@ body {
     margin-top: 30px;
     margin-bottom: 40px;
     font-size: 18px;
-<<<<<<< HEAD
-
-=======
     font-family: 'IBM Plex Serif', serif;
->>>>>>> 0dc0bd91b254d824fde7a5e35809df0f2a706d50
 }
 #drink_current{
 
@@ -313,9 +309,3 @@ body {
     border-radius: 15%;
     margin-top: 20px;
 }
-<<<<<<< HEAD
-=======
-
-
-
->>>>>>> 0dc0bd91b254d824fde7a5e35809df0f2a706d50
