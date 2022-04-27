@@ -2,10 +2,14 @@
 /*
 main color - #e3cbb4
 accent color - rgb(149, 189, 149)
-dark gray - 
-light gray -
+dark gray - rgb(87, 87, 87);
+light gray - rgb(153, 150, 150);
 */
 
+
+body {
+    font-family: 'Merriweather';
+}
 /*layout.html css*/
 
 #welcome{
@@ -62,6 +66,27 @@ light gray -
     color: rgb(87, 87, 87);
     cursor: pointer;
 }
+
+#coffee{
+    border-radius: 12px;
+    cursor: pointer;
+    border: none;
+    height: 35px;
+    margin-right: 10px;
+}
+#tea{
+    border-radius: 12px;
+    cursor: pointer;
+    border: none;
+    height: 35px;
+    margin-right: 10px;
+}
+#other{
+    border-radius: 12px;
+    cursor: pointer;
+    border: none;
+    height: 35px;
+}
 /*end layout.html css*/
 
 /*starting front css*/
@@ -94,10 +119,11 @@ light gray -
 /*end front css*/
 /*start view css*/
 #selection-type{
-    color: rgb(87, 87, 87);
+    color: rgb(153, 150, 150);
     margin-top: 30px;
     margin-bottom: 40px;
     font-size: 18px;
+    
 }
 #drink_current{
     
@@ -138,6 +164,7 @@ light gray -
     border-top: 100px;
     padding-top: 70px;
     color: rgb(87, 87, 87);
+    font-size: 15px;
 }
 
 #update1{
@@ -235,4 +262,5 @@ light gray -
     border-radius: 15%;
     margin-top: 20px;
 }
+
 
