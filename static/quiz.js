@@ -42,10 +42,10 @@ function mistake(){
 function update_step(){
     step = step + 1
     $(".ingredient_label").removeClass("unacceptable")
-
     if(step==drink_info.number_steps){//finished the recipe
         step=0
         console.log("final ajax score=" + score)
+        let final_score = score
         //$("#score_label").text("Congratulations! You finished your recipe. ")
         //$("#score_label").append('You made ' + score + " mistake(s)")
         $.ajax({
@@ -59,7 +59,7 @@ function update_step(){
                 let ref = "window.location.href=" + "'/'";
                 $("#step_quiz").text("Congratulations! You finished your recipe. ")
                 $("#step_quiz").append('<br>')
-                $("#step_quiz").append('You made ' + score + " mistake(s)")
+                $("#step_quiz").append('You made ' + final_score + " mistake(s)")
                 $("#home_button_add").append('<input type="button" id="home_button" class="buttoncolors" value="Go to the home page!" onclick="' + ref + '"></input>')
 
             },
@@ -223,3 +223,4 @@ $(document).ready(function(){
 
 
 })
+
