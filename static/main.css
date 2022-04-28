@@ -261,6 +261,27 @@ body {
 }
 /*end learning css*/
 
+#step_quiz{
+    color: black;
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 18px;
+    margin-left: 70px;
+}
+#home_button_add{
+    text-align: center;
+}
+#home_button{
+    width: 175px;
+    border: none;
+    height: 55px;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-top: 8px;
+}
+/*start quiz css*/
+
+/*end quiz css*/
 :root {
     --background-cup: rgb(0, 0, 0);
 }
