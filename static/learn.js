@@ -1,24 +1,5 @@
 let current_click = ""
 let current_drag = ""
-/*function run(current_step, current_num){
-    console.log("step = " + current_num + ": " + current_step)
-    let isTool = 0
-    if(current_step.includes("Ingredients")==true){
-        isTool++
-    }
-    if(isTool){
-        //fix later
-        return 1
-    }
-    else{
-        //check draggable
-        current_ingredient = current_step.substring(4)
-        if(current_click==current_ingredient){
-            return 1
-        }
-        return 0
-    }
-}*/
 
 function update_step(){
     step = step + 1
@@ -33,7 +14,7 @@ function update_step(){
             success: function(result){
                 $("#step_label").text("Congratulations! You finished your recipe. ")
                 let ref = "window.location.href=" + "'/quiz/"+ drink_info.id + "';";
-                $("#step_label").append('<input type="button" id="quiz_button" value="Quiz Me!" onclick="' + ref + '"></input>')
+                $("#quiz_button_add").append('<input type="button" id="quiz_button" class="buttoncolors" value="Quiz Me!" onclick="' + ref + '"></input>')
             },
             error: function(request, status, error){
                 console.log("Error");
@@ -52,7 +33,15 @@ function update_step(){
             data : JSON.stringify(step),
             success: function(result){
                 //check that step in server is updating
-                $("#step_label").text("Step: " + drink_info.directions[step])
+                if(drink_info.directions[step]=='Microwave'){
+                    $("#step_label").text("Step: " + drink_info.directions[step] + " ingredients")
+                }
+                else if(drink_info.directions[step]=='Whisk'){
+                    $("#step_label").text("Step: " + drink_info.directions[step] + " ingredients")
+                }
+                else{
+                    $("#step_label").text("Step: Add " + drink_info.directions[step])
+                }
             },
             error: function(request, status, error){
                 console.log("Error");
@@ -131,7 +120,7 @@ function whisk() {
 }
 
 $(document).ready(function(){
-    $("#step_label").text("Step: " + drink_info.directions[step])
+    $("#step_label").append(drink_info.directions[step])
     $(".ingredient_label").draggable({
         revert: "invalid",
         start: function(e, ui) {
@@ -175,3 +164,4 @@ $(document).ready(function(){
 
 
 })
+
