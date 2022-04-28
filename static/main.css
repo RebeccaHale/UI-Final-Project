@@ -16,6 +16,20 @@ body {
     font-size: 20px;
 }
 /*layout.html css*/
+#click_more{
+    margin-top: 40px;
+    margin-bottom: -30px;
+    font-size: 18px;
+    text-align: center;
+    color: rgb(87, 87, 87);
+}
+#click_decider{
+    margin-top: 140px;
+    margin-bottom: -130px;
+    font-size: 18px;
+    text-align: center;
+    color: rgb(87, 87, 87);
+}
 .naturaltanbackgroundcolor{
   background-color: #e5d2a7;
 }
