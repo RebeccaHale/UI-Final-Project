@@ -12,16 +12,18 @@
     </script>
     <div class="row">
         <div class="col-12">
-            <div id="drink_name"> QUIZ: Can you make a {{drink_info.name}}? </div>
+            <div id="drink_name"> Quiz: Make a {{drink_info.name}} </div>
         </div>
     </div>
     <div class="row">
-        <div class="col-6">
-            <div id="shelf_label"> Ingredient and Tool Shelf: </div>
-        </div>
-        <div class="col-6">
-            <div id="step_label">Steps complete: {{score}} out of {{drink_info.number_steps}}</div>
+        <div class="col-12">
+            <div id="step_quiz">Steps complete: {{score}} out of {{drink_info.number_steps}}</div>
             <div id="score_label"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div id="shelf_label"> Ingredient and Tool Shelf: </div>
         </div>
     </div>
     <div class="row">
@@ -72,6 +74,10 @@
              {% endfor %}
             </div>
         </div>
+        <div class="col-6">
+            <div id="home_button_add"></div>
+        </div>
     </div>
 
 {% endblock %}
+
