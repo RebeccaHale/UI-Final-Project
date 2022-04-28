@@ -7,7 +7,7 @@
         let drink_info = {{drink_info|tojson}}
         let ingredient_tool_data = {{ingredient_tool_data|tojson}}
         let step = {{step|tojson}}
-        let ingredient_colors = {{ingredient_colors|tojson}}
+        let ingredient_colors = {{ingredient_colors|tojson}} 
     </script>
     <div class="row">
         <div class="col-12">
@@ -15,11 +15,13 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-6">
-            <div id="shelf_label"> Ingredient and Tool Shelf: </div>
+        <div class="col-12">
+            <div id="step_label"> Step: Add </div>
         </div>
-        <div class="col-6">
-            <div id="step_label"> Step: </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div id="shelf_label"> Ingredient and Tool Shelf: </div>
         </div>
     </div>
     <div class="row">
@@ -63,6 +65,9 @@
                 {% endfor %}
                {% endfor %}
             </div>
+        </div>
+        <div class="col-6">
+            <div id="quiz_button_add"></div>
         </div>
     </div>
 
