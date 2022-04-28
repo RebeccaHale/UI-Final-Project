@@ -80,8 +80,6 @@ body {
 .buttoncolors{
     color: #36362c;
     background-color: #5d907d;
-
-
 }
 .buttoncolors:hover{
   color: #0f0f0d;
@@ -129,7 +127,7 @@ body {
 
 /*starting front css*/
 #drink_name_front{
-    color: rgb(153, 150, 150);
+    color: rgb(87, 87, 87);
     margin-top: 30px;
     margin-bottom: 40px;
     font-size: 18px;
@@ -161,23 +159,22 @@ body {
 /*end front css*/
 /*start view css*/
 #selection-type{
-  /*  color: rgb(153, 150, 150);*/
+    color: rgb(87, 87, 87);
     margin-top: 30px;
     margin-bottom: 40px;
     font-size: 18px;
     font-family: 'IBM Plex Serif', serif;
 }
 #drink_current{
-
     font-weight: bold;
     color: black;
-    font-size: 23px;
+    font-size: 25px;
     text-align: left;
     padding-bottom: 15px;
 }
 
 .image-for-recipe{
-    margin-left: 100px;
+    margin-left: 70px;
     text-align: left;
 }
 
@@ -226,19 +223,50 @@ body {
 }
 /*end view css*/
 
+/*start learning css*/
+#drink_name{
+    color: rgb(87, 87, 87);
+    margin-top: 30px;
+    margin-bottom: 45px;
+    font-size: 18px;
+    font-family: 'IBM Plex Serif', serif;
+}
+
+#step_label{
+    color: black;
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 18px;
+    margin-left: 70px;
+}
+#drink_ingredients{
+    margin-left: 70px;
+}
+#drink_tools{
+    margin-left: 70px;
+}
+#shelf_label{
+    margin-left: 70px;
+}
+#quiz_button_add{
+    text-align: center;
+}
+#quiz_button{
+    width: 175px;
+    border: none;
+    height: 55px;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-top: 8px;
+}
+/*end learning css*/
+
 :root {
     --background-cup: rgb(0, 0, 0);
 }
 
 #selection{
     font-size: large;
-
-}
-
-#drink_name{
-    font-size: large;
-    font-weight:730;
-
 }
 
 .ingredient_label {
