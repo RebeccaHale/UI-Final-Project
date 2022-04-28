@@ -46,8 +46,8 @@ function update_step(){
     if(step==drink_info.number_steps){//finished the recipe
         step=0
         console.log("final ajax score=" + score)
-        $("#score_label").text("Congratulations! You finished your recipe. ")
-        $("#score_label").append('You made ' + score + " mistake(s)")
+        //$("#score_label").text("Congratulations! You finished your recipe. ")
+        //$("#score_label").append('You made ' + score + " mistake(s)")
         $.ajax({
             type: "POST",
             url: "../update_step",
@@ -55,9 +55,12 @@ function update_step(){
             contentType: "application/json; charset=utf-8",
             data : JSON.stringify(step),
             success: function(result){
-                $("#step_label").text("Steps complete: " + drink_info.number_steps + " out of " + drink_info.number_steps)
+                $("#step_quiz").text("Steps complete: " + drink_info.number_steps + " out of " + drink_info.number_steps)
                 let ref = "window.location.href=" + "'/'";
-                $("#score_label").append('<input type="button" id="quiz_button" value="Go to the home page!" onclick="' + ref + '"></input>')
+                $("#step_quiz").text("Congratulations! You finished your recipe. ")
+                $("#step_quiz").append('<br>')
+                $("#step_quiz").append('You made ' + score + " mistake(s)")
+                $("#home_button_add").append('<input type="button" id="home_button" class="buttoncolors" value="Go to the home page!" onclick="' + ref + '"></input>')
 
             },
             error: function(request, status, error){
@@ -189,7 +192,7 @@ $(document).ready(function(){
             if(current_click==drink_info.directions[step]){
                 update_step()
                 update_cup(current_click)
-                $("#step_label").text("Steps complete: " + step + " out of " + drink_info.number_steps)
+                $("#step_quiz").text("Steps complete: " + step + " out of " + drink_info.number_steps)
                 //console.log("Step completed! new step: " + drink_info.directions[step])
             }
             else{
@@ -210,7 +213,7 @@ $(document).ready(function(){
             if (current_click == "Whisk") {
                 whisk()
             }
-            $("#step_label").text("Steps complete: " + step + " out of " + drink_info.number_steps)
+            $("#step_quiz").text("Steps complete: " + step + " out of " + drink_info.number_steps)
         }
         else{
             console.log("mistake!")
