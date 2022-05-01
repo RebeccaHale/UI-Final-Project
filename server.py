@@ -116,67 +116,78 @@ ingredient_tool_data = {
         "id": "1",
         "name": "Whisk",
         "type": "tool",
-        "image": "https://media.istockphoto.com/photos/whisk-picture-id489696253?s=612x612"
+        "image": "https://media.istockphoto.com/photos/whisk-picture-id489696253?s=612x612",
+        "html": '<div class = "tool_button" id = "Whisk"><div id = "whisk-ring-outer"><div id = "whisk-ring-inner"></div></div><div id = "whisk-handle"></div><div id = "whisk-handle-divot"></div><div class = "whisk-tongs"></div></div>'
     },
     "2": {
         "id": "2",
         "name": "Microwave",
         "type": "tool",
-        "image": "https://media.istockphoto.com/photos/modern-microwave-oven-picture-id139406154?s=612x612"
+        "image": "https://media.istockphoto.com/photos/modern-microwave-oven-picture-id139406154?s=612x612",
+        "html": '<div class = "tool_button" id = "Microwave"><div id = "microwave-body"><div id = "microwave-door"><div id = "microwave-window">Microwave</div></div><div id = "microwave-controls"><div id = "microwave-display">4:20</div><div id = "microwave-buttons"></div></div></div></div>'
     },
     "3": {
         "id": "3",
         "name": "Coffee Powder",
         "type": "ingredient",
-        "image": "https://media.istockphoto.com/photos/coffee-beans-and-ground-coffee-heap-isolated-on-white-background-picture-id1072068026?s=612x612"
+        "image": "https://media.istockphoto.com/photos/coffee-beans-and-ground-coffee-heap-isolated-on-white-background-picture-id1072068026?s=612x612",
+        "html": "<div class = 'ingredient_label' id = 'Coffee Powder'><div id = 'coffee-lid'></div><div id = 'coffee-jar'><div id = 'coffee-label'>COFFEE POWDER</div></div></div>"
     },
     "4": {
         "id": "4",
         "name": "White Sugar",
         "type": "ingredient",
-        "image": "https://media.istockphoto.com/photos/white-sugar-picture-id490394238?s=612x612"
+        "image": "https://media.istockphoto.com/photos/white-sugar-picture-id490394238?s=612x612",
+        "html": "<div class = 'ingredient_label' id = 'White Sugar'><div id = 'sugar-bag-overlay'></div><div id = 'sugar-bag'><div id = 'sugar-label1'>WHITE<div><div id = 'sugar-label2'>SUGAR<div></div></div>"
     },
     "5": {
         "id": "5",
         "name": "Milk",
         "type": "ingredient",
-        "image": "https://media.istockphoto.com/photos/tall-glass-of-milk-against-a-white-background-picture-id172764098?s=612x612"
+        "image": "https://media.istockphoto.com/photos/tall-glass-of-milk-against-a-white-background-picture-id172764098?s=612x612",
+        "html": "<div class = 'ingredient_label' id = 'Milk'><div id='milk-center'><div id='milk-front'></div><div id='milk-side'></div><div id='milk-top-white'></div><div id='milk-top-blue'></div><div id='milk-tip'></div><div id='milk-front-label'>Milk</div><div id='milk-side-label'></div></div></div>"
     },
     "6": {
         "id": "6",
         "name": "Water",
         "type": "ingredient",
-        "image": "https://media.istockphoto.com/photos/glass-of-water-picture-id485685046?s=612x612"
+        "image": "https://media.istockphoto.com/photos/glass-of-water-picture-id485685046?s=612x612",
+        "html": "<div class = 'ingredient_label' id = 'Water'><div id = 'water-bottle'><div id = 'water-liquid'>WATER</div></div></div>"
     },
     "7": {
         "id": "7",
         "name": "Cocoa Powder",
         "type": "ingredient",
-        "image": "https://media.istockphoto.com/photos/ground-cocoa-and-chocolate-pieces-isolated-on-white-background-picture-id473660712?s=2048x2048"
+        "image": "https://media.istockphoto.com/photos/ground-cocoa-and-chocolate-pieces-isolated-on-white-background-picture-id473660712?s=2048x2048",
+        "html": "<div class = 'ingredient_label' id = 'Cocoa Powder'><div id = 'cocoa-jar'><div id ='cocoa-label'>cocoa powder</div></div></div>"
     },
     "8": {
         "id": "8",
         "name": "Vanilla Extract",
         "type": "ingredient",
-        "image": "https://media.istockphoto.com/photos/bottle-of-vanilla-picture-id485610601?s=612x612"
+        "image": "https://media.istockphoto.com/photos/bottle-of-vanilla-picture-id485610601?s=612x612",
+        "html": "<div class = 'ingredient_label' id = 'Vanilla Extract'><div id = 'vanilla-container'><div id = 'vanilla-neck'></div><div id = 'vanilla-bottle'><div id = 'vanilla-extract'><div id = 'vanilla-label'>vanilla</div></div></div></div></div>"
     },
     "9": {
         "id": "9",
         "name": "Mini Marshmallows",
         "type": "ingredient",
-        "image": "https://media.istockphoto.com/photos/delicious-puffy-marshmallows-on-lilac-background-flat-lay-picture-id1328289938?s=612x612"
+        "image": "https://media.istockphoto.com/photos/delicious-puffy-marshmallows-on-lilac-background-flat-lay-picture-id1328289938?s=612x612",
+        "html": "<div class = 'ingredient_label' id = 'Mini Marshmallows'><div id = 'marshmallow-bowl'><div id = 'marshmallow-label'>MARSH<br>MALLOWS</div></div></div>"
     },
     "10": {
         "id": "10",
         "name": "Matcha Powder",
         "type": "ingredient",
-        "image": "https://media.istockphoto.com/photos/heap-of-green-matcha-tea-powder-and-leaves-picture-id978314808?s=612x612"
+        "image": "https://media.istockphoto.com/photos/heap-of-green-matcha-tea-powder-and-leaves-picture-id978314808?s=612x612",
+        "html": "<div class = 'ingredient_label' id = 'Matcha Powder'><div id = 'matcha-container'><div id = 'matcha-powder'></div><div id = 'matcha-jar'><div id = 'matcha-label'>matcha</div></div></div></div>"
     },
     "11": {
         "id": "11",
         "name": "Honey",
         "type": "ingredient",
-        "image": "https://media.istockphoto.com/photos/bottle-of-honey-picture-id177231613?s=612x612"
+        "image": "https://media.istockphoto.com/photos/bottle-of-honey-picture-id177231613?s=612x612",
+        "html": "<div class = 'ingredient_label' id = 'Honey'><div id = 'honey-lid'></div><div id = 'honey-jar'><div id = 'honey-label'>honey</div></div></div>"
     },
 }
 

@@ -161,9 +161,29 @@ function whisk() {
     });
 }
 
+function populateShelf() {
+
+    for (i = 1; i <= 2; i++) {
+        tool = ingredient_tool_data[i];
+        newTool = $(tool['html']);
+
+        $("#drink_tools").append(newTool);
+    }
+
+    for (i = 3; i <= Object.keys(ingredient_tool_data).length; i++) {
+        ingred = ingredient_tool_data[i];
+        newIngredient = $(ingred['html']);
+
+        $("#drink_ingredients").append(newIngredient);
+
+    }
+
+
+}
 
 
 $(document).ready(function(){
+    populateShelf()
     //$("#step_label").text("Step: " + drink_info.directions[step])
     $(".ingredient_label").draggable({
         revert: "invalid",
@@ -206,7 +226,7 @@ $(document).ready(function(){
     });*/
 
     $(".tool_button").click(function(){
-        current_click = $(this).val()
+        current_click = $(this).attr('id');
         if(current_click==drink_info.directions[step]){
             update_step()
 

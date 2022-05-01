@@ -27,15 +27,6 @@
     <div class="row">
         <div class="col-6">
             <div id="drink_ingredients">
-              {% for ingred in  drink_info.ingredients %}
-                {% for num,ingretool in ingredient_tool_data.items() %}
-                  {% if ingretool['name'] == ingred %}
-                    <div class="ingredient_label" id="{{ingred}}">{{ingred}}
-                    <img src="{{ingretool.image}}" alt="Picture of {{ingretool.name}}" width="50" height="50">
-                    </div>
-                  {% endif %}
-                {% endfor %}
-              {% endfor %}
             </div>
         </div>
         <div class="col-6">
@@ -57,13 +48,6 @@
     <div class="row">
         <div class="col-6">
             <div id="drink_tools">
-                {% for tool in  drink_info.tools %}
-                 {% for num,ingretool in ingredient_tool_data.items() %}
-                  {% if ingretool['name'] == tool %}
-                    <input type="image" src="{{ingretool.image}}" name="submit" alt="Picture of {{ingretool.name}}" width="80" height="50" class="tool_button" value="{{tool}}"/>
-                  {% endif %}
-                {% endfor %}
-               {% endfor %}
             </div>
         </div>
         <div class="col-6">
