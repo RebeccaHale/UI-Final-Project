@@ -245,13 +245,17 @@ body {
     font-size: 18px;
     font-family: 'IBM Plex Serif', serif;
 }
-
+#directions_label{
+    margin-left: 70px;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
 #step_label{
     color: black;
     font-size: 25px;
     font-weight: bold;
     margin-bottom: 18px;
-    margin-left: 70px;
+    margin-left: 120px;
 }
 #drink_ingredients{
     margin-left: 70px;
@@ -261,6 +265,7 @@ body {
 }
 #shelf_label{
     margin-left: 70px;
+    color:rgb(87, 87, 87);
 }
 #quiz_button_add{
     text-align: center;
